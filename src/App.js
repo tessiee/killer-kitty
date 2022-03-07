@@ -11,6 +11,7 @@ class App extends Component {
     this.state = {
       kitties: [],
       searchField: "",
+      selectedKiller: {},
     };
   }
 
@@ -32,9 +33,19 @@ class App extends Component {
     });
   };
 
+  onSelectKiller = (event) => {
+    const selectedKiller = event.target.parentElement;
+    console.log(selectedKiller);
+
+    this.setState(() => {
+      return { selectedKiller };
+    });
+  };
+
   render() {
     const { kitties, searchField } = this.state;
     const { onSearchChange } = this;
+    const { onSelectKiller } = this;
 
     const filteredKitties = kitties.filter((kitty) => {
       return kitty.name.toLocaleLowerCase().includes(searchField);
@@ -49,7 +60,10 @@ class App extends Component {
           onChangeHandler={onSearchChange}
           placeholder="search kitty"
         />
-        <KillerList kitties={filteredKitties} />
+        <KillerList
+          kitties={filteredKitties}
+          onSelectHandler={onSelectKiller}
+        />
       </div>
     );
   }

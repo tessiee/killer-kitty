@@ -7,7 +7,7 @@ class KillerList extends Component {
     const { kitties } = this.props;
 
     return (
-      <div className="killer-list">
+      <div className="killer-list" onClick={this.props.onSelectHandler}>
         {kitties.map((kitty) => {
           return <Killer kitty={kitty} />;
         })}
