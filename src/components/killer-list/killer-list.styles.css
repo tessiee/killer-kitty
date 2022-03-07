@@ -1,0 +1,8 @@
+.killer-list {
+  width: 75vw;
+  margin: 0 auto;
+  margin-bottom: 75px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 50px;
+}
