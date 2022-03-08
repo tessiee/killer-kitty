@@ -35,6 +35,7 @@ class App extends Component {
 
   onSelectKiller = (event) => {
     const selectedKiller = event.target.parentElement;
+    selectedKiller.classList.add("selected-killer");
     console.log(selectedKiller);
 
     this.setState(() => {
